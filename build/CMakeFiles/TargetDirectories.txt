@@ -1,3 +1,0 @@
-/home/liniux/Pulpit/Sieci projekt/SieciProjekt/build/CMakeFiles/Gra.dir
-/home/liniux/Pulpit/Sieci projekt/SieciProjekt/build/CMakeFiles/edit_cache.dir
-/home/liniux/Pulpit/Sieci projekt/SieciProjekt/build/CMakeFiles/rebuild_cache.dir
