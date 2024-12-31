@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Gra.dir/src/game.cpp.o CMakeFiles/Gra.dir/src/main.cpp.o CMakeFiles/Gra.dir/src/window.cpp.o -o Gra  /usr/lib64/libsfml-graphics.so.2.5.1 /usr/lib64/libsfml-network.so.2.5.1 /usr/lib64/libsfml-window.so.2.5.1 /usr/lib64/libsfml-system.so.2.5.1 
