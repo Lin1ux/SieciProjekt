@@ -8,10 +8,12 @@
 
 int main()
 {
-    sf::RenderWindow* Window = createWindow();
+    sf::RenderWindow* Window = createWindow();  //Utworzenie okna
 
+    //Sprawdzenie czy okno zostało otwarte
     while(Window->isOpen())
     {
+        //Pętla gry
         GameLoop(Window);
         Window->clear(sf::Color::Black); //Wyczyszczenie ekraniu
         Window->display();               //Wrzucenie zmian do okna
