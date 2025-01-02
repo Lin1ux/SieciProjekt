@@ -4,6 +4,6 @@
 #include<SFML/Graphics.hpp>
 
 //Pętla gry
-int  GameLoop(sf::RenderWindow* Window);
+int  EventLoop(sf::RenderWindow* Window);
 
 #endif
