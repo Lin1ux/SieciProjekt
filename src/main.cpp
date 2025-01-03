@@ -5,6 +5,8 @@
 #include "window.hpp"
 #include "game.hpp"
 #include "player.hpp"
+#include "map.hpp"
+#include "wall.hpp"
 
 
 
@@ -12,25 +14,18 @@ int main()
 {
     sf::RenderWindow* Window = createWindow();  //Utworzenie okna
 
+    GameMap GameMap(32);
+
+    GameMap.AddWall(Wall(sf::Vector2i(10,10)));
+    
     Player player1;
 
-    /*sf::Texture pTexture;
-    sf::Sprite playerImage;
-
-    if(!pTexture.loadFromFile("assets/player.png"))
-    {
-        std::cout<<"Nie udało się wczytać tekstury gracza\n";
-    }
-
-    playerImage.setTexture(pTexture);   //Ustawia teksturę gracza
-    */
     sf::Vector2f moveDirection;
     sf::Clock deltaClock;
 
     //Sprawdzenie czy okno zostało otwarte
     while(Window->isOpen())
     {
-
         sf::Time deltaTime = deltaClock.restart();      //Wyliczenie delty time (czas między klatkami)
 
         //Pętla wydarzeń
@@ -63,18 +58,19 @@ int main()
             //playerImage.move(1,0);
         }
         player1.Move(moveDirection,deltaTime);
-        //moveDirection.x *= deltaTime.asMilliseconds();
-        //moveDirection.y *= deltaTime.asMilliseconds();
-        //playerImage.move(moveDirection);
-        Window->clear(sf::Color::Black); //Wyczyszczenie ekraniu
+        //Window->clear(sf::Color::Black); //Wyczyszczenie ekraniu
         
-        //playerImage.setPosition(300,100);   //Ustawia pozycję gracza
-        //Window->draw(playerImage);
+        GameMap.DrawMap(Window);
+        GameMap.DrawWalls(Window);
+        if(GameMap.isPlayerColliding(player1))
+        {
+            std::cout<<"kolizja\n";
+        }
         player1.DrawPlayer(Window);
         Window->display();               //Wrzucenie zmian do okna
     }
 
     delete Window; 
-    std::cout<<"Działa\n";
+    std::cout<<"Koniec\n";
     return 0;
 }
